@@ -1,0 +1,13 @@
+<h2>Login</h2>
+
+<form (ngSubmit)="apiLogin()">
+  <div>
+    <label for="email">Email:</label>
+    <input type="text" id="username" [(ngModel)]="email" name="email" required>
+  </div>
+  <div>
+    <label for="password">Password:</label>
+    <input type="password" id="password" [(ngModel)]="password" name="password" required>
+  </div>
+  <button type="submit" href="/moderation">Login</button>
+</form>

@@ -1,0 +1,35 @@
+<div>
+  <h2>Modération des commentaires</h2>
+
+  <!-- Vérifier s'il y a des commentaires -->
+  <div *ngIf="commentaires.length > 0; else noComments">
+    <table class="moderation-table">
+      <thead>
+        <tr>
+          <th>Utilisateur</th>
+          <th>Date</th>
+          <th>Commentaire</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- Parcourir chaque commentaire -->
+        <tr *ngFor="let commentaire of commentaires">
+          <td>{{ commentaire.utilisateur }}</td>
+          <td>{{ commentaire.dateCommentaire }}</td>
+          <td>{{ commentaire.texte }}</td>
+          <td>
+            <!-- Boutons d'action -->
+            <button (click)="approuver(commentaire.id)" class="approve-btn">Approuver</button>
+            <button (click)="supprimer(commentaire.id)" class="delete-btn">Supprimer</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- Message s'il n'y a aucun commentaire -->
+  <ng-template #noComments>
+    <p>Aucun commentaire à modérer.</p>
+  </ng-template>
+</div>
