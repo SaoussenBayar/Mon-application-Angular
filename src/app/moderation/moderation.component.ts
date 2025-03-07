@@ -8,7 +8,7 @@ import { CommonModule } from '@angular/common';
   standalone: true, // Déclare que le composant est autonome
   templateUrl: './moderation.component.html',
   styleUrls: ['./moderation.component.css'],
-  imports: [HttpClientModule, CommonModule] // Ajoutez HttpClientModule ici
+  imports: [HttpClientModule, CommonModule] 
 })
 export class ModerationComponent implements OnInit {
 
